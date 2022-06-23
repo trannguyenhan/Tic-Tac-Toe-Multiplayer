@@ -341,6 +341,7 @@ void recv_msg_handler()
             }
             else if (strcmp(message, "start game\n") == 0)
             {
+                printf("Hahaha");
                 pthread_cancel(lobby_thread);
                 // pthread_kill(recv_msg_thread, SIGUSR1);   
                 
@@ -409,8 +410,8 @@ int conectGame()
     setbuf(stdin, 0);
 
     printf("Enter your name: ");
-    fgets(name, BUFFER_SZ, stdin);
-    trim_lf(name, BUFFER_SZ);
+    fgets(name, 32, stdin);
+    trim_lf(name, 32);
 
     // strcpy(name, "murilo");
 

@@ -110,6 +110,8 @@ void *handle_client(void *arg)
 
     while(leave_flag == 0)
     {
+        bzero(buffer, BUFFER_SZ);
+
         command[0] = '\x00';
         number = 0;
 
@@ -440,7 +442,8 @@ void *handle_client(void *arg)
                                     bzero(buffer, BUFFER_SZ);
                                     sprintf(buffer, "[SERVER] esta partida ja acabou\n");
                                     send_message(buffer, cli->uid);
-                                    break;
+                                    //break;
+                                    continue;
                                 }
 
                                 setbuf(stdin, 0);
@@ -525,7 +528,8 @@ void *handle_client(void *arg)
                                     sleep(0.5);
 
                                     send_message(buffer, rooms[j]->player2->uid);
-                                    break;
+                                    //break;
+                                    continue;
                                 }
 
                                 if (rooms[j]->game->turnoDoJogador == rooms[j]->player1->uid)
@@ -555,7 +559,7 @@ void *handle_client(void *arg)
 
                                 rooms[j]->game->rodada++;
                             }
-                            break;
+                            //break;
                         }
                     }
 
@@ -576,7 +580,7 @@ void *handle_client(void *arg)
             leave_flag = 1;
         }
 
-        bzero(buffer, BUFFER_SZ);
+        // bzero(buffer, BUFFER_SZ);
     }
 
     bzero(buffer, BUFFER_SZ);
@@ -649,6 +653,8 @@ int main(int argc, char **argv)
             close(connfd);
             continue;
         }
+
+        printf("Hahaha");
 
         // clients settings
         client_t *cli = (client_t *)malloc(sizeof(client_t));
