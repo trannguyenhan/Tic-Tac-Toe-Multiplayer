@@ -1,3 +1,5 @@
+#### code fix by: [Kiet Nguyen](https://github.com/KietNguyen10112000)
+
 <h1 align="center"> Simple Tic-Tac-Toe Overview </h1>
 
 [![Build Status](https://img.shields.io/appveyor/ci/thiagoloureiro/netcore-jwt-integrator-extension/master.svg)]()
