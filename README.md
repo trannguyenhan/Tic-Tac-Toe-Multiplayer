@@ -1,4 +1,4 @@
-#### code fix by: [Kiet Nguyen](https://github.com/KietNguyen10112000)
+#### Code fix by: [Kiet Nguyen](https://github.com/KietNguyen10112000)
 
 <h1 align="center"> Simple Tic-Tac-Toe Overview </h1>
 
